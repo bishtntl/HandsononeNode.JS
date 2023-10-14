@@ -41,9 +41,15 @@ App.listen(8000,()=>{
 })
 
 const {jsOne}=require('./jsonData')
+const blogrouter=require('./secondhand/blogrouter')
+const postRouter=require('./secondhand/postrouter')
+const userRouter=require('./secondhand/userrouter')
 const express=require('express')
 const js_Data=express();
-js_Data.use(['api/main'],jsOne)
+js_Data.use("api/main",jsOne)
+js_Data.use("api/main",blogrouter)
+js_Data.use("api/main",postRouter)
+
 js_Data.listen(4500,()=>{
     try{
         console.log("server is running")
@@ -53,3 +59,4 @@ js_Data.listen(4500,()=>{
     }
 })
 console.log(jsOne)
+console.log(blogrouter)
