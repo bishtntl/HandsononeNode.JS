@@ -49,6 +49,7 @@ const js_Data=express();
 js_Data.use("api/main",jsOne)
 js_Data.use("api/main",blogrouter)
 js_Data.use("api/main",postRouter)
+js_Data.use("api/main",userRouter)
 
 js_Data.listen(4500,()=>{
     try{
